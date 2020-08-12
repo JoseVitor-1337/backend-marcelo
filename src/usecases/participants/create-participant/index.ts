@@ -1,8 +1,8 @@
 import CreateParticipantUseCase from "./CreateParticipantUseCase";
-import SaveParticipantToDatabase from "src/database/participants/SaveParticipantToDatabase";
+import { SaveParticipantToDatabase } from "src/database/participants";
 
 const CreateParticipant = new CreateParticipantUseCase(
-  SaveParticipantToDatabase
+  new SaveParticipantToDatabase()
 );
 
 export { CreateParticipant };

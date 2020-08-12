@@ -13,4 +13,4 @@ class SaveParticipantToDatabase implements ICreateParticipant {
   }
 }
 
-export default new SaveParticipantToDatabase();
+export { SaveParticipantToDatabase };

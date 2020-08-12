@@ -15,6 +15,7 @@
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
       "@usecases/*": ["./src/usecases/*"],
+      "@database/*": ["./src/database/*"],
       "@protocols/*": ["./src/protocols/*"]
     }
   }

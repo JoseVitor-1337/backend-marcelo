@@ -13,4 +13,4 @@ class SaveResearcherToDatabase implements ICreateResearcher {
   }
 }
 
-export default new SaveResearcherToDatabase();
+export { SaveResearcherToDatabase };

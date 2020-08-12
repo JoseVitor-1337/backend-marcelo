@@ -8,8 +8,8 @@
 
 ## Participantes
 
-- [] Criação da conta do participante
-  - [] Validando Email
+- [x] Criação da conta do participante
+  - [z] Validando Email
   - [] Validando os dados
 - [] Pegar dados do participante logado
   - [] Validar acesso a rota
