@@ -1,23 +1,23 @@
 import database from "../config/database";
 
 interface IImage {
-  path: String;
-  alt: String;
+  path: string;
+  alt: string;
 }
 
 export interface IAlternatives {
-  option: String;
-  answer?: String;
+  option: string;
+  answer?: string;
   image?: IImage;
-  correct: Boolean;
+  correct: boolean;
 }
 
 interface IQuestionsSchema extends database.Document {
-  type: String;
-  question: String | IImage;
-  answer: String | IImage;
+  type: string;
+  question: string | IImage;
+  answer: string | IImage;
   alternatives: IAlternatives[];
-  retrues: Number;
+  retrues: boolean;
 }
 
 const QuestionsSchema = new database.Schema({

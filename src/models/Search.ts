@@ -1,26 +1,26 @@
 import database from "../config/database";
 
 export interface IStatus {
-  participantId?: String;
-  answeredQuestions?: Number;
-  correctQuestions?: Number[];
-  status?: String;
-  attempts?: Number;
+  participantId?: string;
+  answeredQuestions?: number;
+  correctQuestions?: number[];
+  status?: string;
+  attempts?: number;
 }
 
 interface IResearchSchema extends database.Document {
-  researcher: String;
-  title: String;
-  type: String;
-  content: String;
-  description: String;
-  retries: Number;
-  MTS: String;
-  interval: Number;
-  correctQuestions: Number;
-  wrongQuestions: Number;
-  participants: String[];
-  questions: String[];
+  researcher: string;
+  title: string;
+  type: string;
+  content: string;
+  description: string;
+  retries: number;
+  MTS: string;
+  interval: number;
+  correctQuestions: number;
+  wrongQuestions: number;
+  participants: string[];
+  questions: string[];
   status: IStatus[];
 }
 

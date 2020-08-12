@@ -1,19 +1,21 @@
 import database from "../config/database";
 
-interface IParticipantSchema extends database.Document {
-  fullName: String;
-  schooling: String;
-  age: Number;
-  ethnicClassification: String;
-  economicClassification: String;
-  univercityOrSchoolName: String;
-  univercityOrSchoolType: String;
-  sex: String;
-  state: String;
-  course: String;
-  email: String;
-  password: String;
-}
+export type IParticipant = {
+  fullName: string;
+  schooling: string;
+  age: number;
+  ethnicClassification: string;
+  economicClassification: string;
+  univercityOrSchoolName: string;
+  univercityOrSchoolType: string;
+  sex: string;
+  state: string;
+  course: string;
+  email: string;
+  password: string;
+};
+
+interface IParticipantSchema extends database.Document, IParticipant {}
 
 const ParticipantSchema = new database.Schema({
   fullName: {

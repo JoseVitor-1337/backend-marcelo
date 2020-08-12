@@ -1,9 +1,9 @@
 import database from "../config/database";
 
 interface IAdministerSchema extends database.Document {
-  fullName: String;
-  email: String;
-  password: String;
+  fullName: string;
+  email: string;
+  password: string;
 }
 
 const AdministerSchema = new database.Schema({

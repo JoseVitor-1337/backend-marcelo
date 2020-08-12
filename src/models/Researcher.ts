@@ -1,17 +1,19 @@
 import database from "../config/database";
 
-interface IResearcherSchema extends database.Document {
-  fullName: String;
-  schooling: String;
-  age: Number;
-  cpf: String;
-  univercityName: String;
-  univercityType: String;
-  state: String;
-  course: String;
-  email: String;
-  password: String;
+export interface IResearcher {
+  fullName: string;
+  schooling: string;
+  age: number;
+  cpf: string;
+  univercityName: string;
+  univercityType: string;
+  state: string;
+  course: string;
+  email: string;
+  password: string;
 }
+
+interface IResearcherSchema extends database.Document, IResearcher {}
 
 const ResearcherSchema = new database.Schema({
   fullName: {
