@@ -24,21 +24,26 @@ const QuestionsSchema = new database.Schema({
   type: {
     type: String,
     required: true,
+    match: [/^[a-zA-Z]{4,}$/, "{VALUE} nãe é um tipo válido"],
   },
   structure: {
     type: String,
     required: true,
+    match: [/^[a-zA-Z]{4,}$/, "{VALUE} nãe é um estrutura válido"],
   },
   stimulus: {
     type: String,
+    match: [/^[a-zA-Z]{4,}$/, "{VALUE} nãe é um tipo de estímulo válido"],
   },
   question: {
     type: Object,
     required: true,
+    match: [/^[a-zA-Z]{4,}$/, "{VALUE} nãe é uma pergunta válido"],
   },
   answer: {
     type: Object,
     required: true,
+    match: [/^[a-zA-Z]{4,}$/, "{VALUE} nãe é uma resposta válido"],
   },
   alternatives: {
     type: [Object],
@@ -46,7 +51,7 @@ const QuestionsSchema = new database.Schema({
   },
   retries: {
     type: Number,
-    min: 0,
+    min: [0, "{VALUE} deve ser um número inteiro maior ou igual a 0"],
   },
 });
 

@@ -31,7 +31,7 @@ class CreateParticipantUseCase {
 
     participant.password = await bcrypt.hash(participant.password, 10);
 
-    this.createParticipant.save(participant);
+    await this.createParticipant.save(participant);
   }
 }
 

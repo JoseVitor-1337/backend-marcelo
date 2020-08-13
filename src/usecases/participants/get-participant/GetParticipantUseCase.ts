@@ -4,13 +4,13 @@ class GetParticipantUseCase {
   constructor(private getParticipant: IGetParticipant) {}
 
   async findOne(id: string) {
-    const participants = this.getParticipant.find(id);
+    const participant = this.getParticipant.find(id);
 
-    if (!participants) {
+    if (!participant) {
       throw new Error("O usuário não é um Participante");
     }
 
-    return participants;
+    return participant;
   }
 }
 

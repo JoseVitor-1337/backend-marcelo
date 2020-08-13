@@ -33,31 +33,38 @@ const ResearchSchema = new database.Schema({
   title: {
     type: String,
     required: true,
+    match: [/^[\D\d]{3,}$/, "{VALUE} deve ter um tamanho maior que 3"],
   },
   type: {
     type: String,
     required: true,
+    match: [/^[\D\d]{3,}$/, "{VALUE} deve ter um tamanho maior que 3"],
   },
   content: {
     type: String,
     required: true,
+    match: [/^[\D\d]{5,}$/, "{VALUE} deve ter um tamanho maior que 5"],
   },
   description: {
     type: String,
     required: true,
+    match: [/^[\D\d]{6,}$/, "{VALUE} deve ter um tamanho maior que 6"],
   },
   retries: {
     type: Number,
-    min: 0,
+    min: [0, "{VALUE} deve ser um número inteiro maior ou igual a 0"],
   },
   MTS: {
     type: String,
     required: true,
-    enum: ["Simultaneo", "Atrasado"],
+    match: [
+      /^Simultaneo$|^Atrasado$/,
+      "{VALUE} deve ser 'Simultaneo' ou 'Atrasado'",
+    ],
   },
   interval: {
     type: Number,
-    min: 1,
+    min: [1, "{VALUE} deve ser um número inteiro maior ou igual a 1"],
   },
   status: {
     type: [Object],
@@ -66,7 +73,7 @@ const ResearchSchema = new database.Schema({
   session: {
     type: String,
     default: "Aberto",
-    enum: ["Aberto", "Fechado"],
+    match: [/^Aberto$|^Fechado$/, "{VALUE} deve ser 'Aberto' ou 'Fechado'"],
   },
   participants: [
     {

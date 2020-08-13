@@ -1,25 +1,31 @@
 import database from "../config/database";
+import { Document } from "mongoose";
 
-interface IAdministerSchema extends database.Document {
+export interface IAdminister {
   fullName: string;
   email: string;
   password: string;
 }
 
+interface IAdministerSchema extends Document, IAdminister {}
+
 const AdministerSchema = new database.Schema({
   fullName: {
     type: String,
-    required: true,
+    match: [/^[a-zA-Z]{2,}$/, "{VALUE} não é um nome válido"],
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    unique: [true, "Este email já está cadastrado no sistema"],
+    match: [
+      /^[\D\d]{2,}[@][a-z]{2,}[.][a-z]{2,}/,
+      "{VALUE} não é um email válido",
+    ],
   },
   password: {
     type: String,
-    required: true,
     select: false,
+    match: [/^[\D\d]{3,}$/, "Apenas deve ser maior que 3"],
   },
 });
 
