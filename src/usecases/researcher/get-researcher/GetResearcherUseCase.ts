@@ -6,8 +6,6 @@ class GetResearcherUseCase {
   async findOne(id: string) {
     const researcher = await this.getResearcher.find(id);
 
-    console.log(researcher);
-
     if (!researcher) {
       throw new Error("O usuário não é um Pesquisador");
     }

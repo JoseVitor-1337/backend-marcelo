@@ -9,6 +9,7 @@ const routes = Router();
 
 routes.post("/participant", ParticipantController.create);
 routes.get("/participant", validateAcessInRouter, ParticipantController.show);
+routes.get("/participants", validateAcessInRouter, ParticipantController.index);
 
 routes.post("/administer", AdministerController.create);
 routes.get("/administer", validateAcessInRouter, AdministerController.show);

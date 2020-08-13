@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateParticipant, GetParticipant } from "@usecases/participants";
+import { GetAllParticipants } from "@usecases/participants/get-all-participants";
 
 class ParticipantController {
   async create(request: Request, response: Response) {
@@ -27,6 +28,20 @@ class ParticipantController {
       const participant = await GetParticipant.findOne(id);
 
       return response.json(participant);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
+      });
+    }
+  }
+
+  async index(request: Request, response: Response) {
+    const filters = request.query;
+
+    try {
+      const participants = await GetAllParticipants.find(filters);
+
+      return response.json(participants);
     } catch (error) {
       return response.status(400).json({
         message: error.message,

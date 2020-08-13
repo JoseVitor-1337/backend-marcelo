@@ -2,7 +2,7 @@ import { IGetParticipant } from "@protocols/participant";
 
 import Participant from "@models/Participant";
 
-class GetParticipantOfDatabase implements IGetParticipant {
+class GetParticipantFromDatabase implements IGetParticipant {
   async find(id: string) {
     const participant = await Participant.findById(id).lean();
 
@@ -10,4 +10,4 @@ class GetParticipantOfDatabase implements IGetParticipant {
   }
 }
 
-export { GetParticipantOfDatabase };
+export { GetParticipantFromDatabase };

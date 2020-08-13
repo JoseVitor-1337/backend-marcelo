@@ -9,9 +9,8 @@ async function validateAcessInRoutes(
   const token = String(request.headers.token);
 
   try {
-    console.log(ValidadeUserAcess);
     const decodedToken = await ValidadeUserAcess.hasAcessToRoutes(token);
-    console.log(decodedToken);
+
     request.headers.id = decodedToken.id;
 
     next();

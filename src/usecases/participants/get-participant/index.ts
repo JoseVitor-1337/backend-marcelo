@@ -1,8 +1,8 @@
-import { GetParticipantOfDatabase } from "@domain/participants";
+import { GetParticipantFromDatabase } from "@domain/participants";
 import GetParticipantUseCase from "./GetParticipantUseCase";
 
 const GetParticipant = new GetParticipantUseCase(
-  new GetParticipantOfDatabase()
+  new GetParticipantFromDatabase()
 );
 
 export { GetParticipant };
