@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateResearcher } from "@usecases/researcher";
+import { GetResearcher } from "@usecases/researcher/get-researcher";
 
 class ResearcherController {
   async create(request: Request, response: Response) {
@@ -16,6 +17,20 @@ class ResearcherController {
     } catch (err) {
       return response.status(400).json({
         message: err.message,
+      });
+    }
+  }
+
+  async show(request: Request, response: Response) {
+    const id = String(request.headers.id);
+
+    try {
+      const researcher = await GetResearcher.findOne(id);
+
+      return response.json(researcher);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
       });
     }
   }

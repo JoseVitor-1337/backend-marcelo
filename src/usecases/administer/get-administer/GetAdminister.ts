@@ -4,7 +4,7 @@ class GetAdministerUseCase {
   constructor(private getAdminister: IGetAdminister) {}
 
   async findOne(id: string) {
-    const administer = this.getAdminister.find(id);
+    const administer = await this.getAdminister.find(id);
 
     if (!administer) {
       throw new Error("O usuário não é um Administrador");

@@ -11,7 +11,7 @@ class MakeAuthenticationUseCase {
       password
     );
 
-    if (hasMatch) {
+    if (!hasMatch) {
       throw new Error("Email e/ou senha inválidos");
     }
 

@@ -14,6 +14,7 @@ routes.post("/administer", AdministerController.create);
 routes.get("/administer", validateAcessInRouter, AdministerController.show);
 
 routes.post("/researcher", ResearcherController.create);
+routes.get("/researcher", validateAcessInRouter, ResearcherController.show);
 
 routes.post("/auth", AuthenticationController.create);
 
