@@ -6,6 +6,6 @@ export interface IUserPayload {
 
 export interface IMakeAuthentication {
   generateAcessToken(userPayload: IUserPayload): Promise<string>;
-  hasMatchThePassword(userPassword: string, password: string): void;
+  hasMatchThePassword(userPassword: string, password: string): Promise<boolean>;
   findUserTypeByEmail(email: string): Promise<IUserPayload>;
 }

@@ -1,2 +1,2 @@
 export * from "./SaveParticipantToDatabase";
-export * from "./GetOneParticipantOfDatabase";
+export * from "./GetParticipantOfDatabase";

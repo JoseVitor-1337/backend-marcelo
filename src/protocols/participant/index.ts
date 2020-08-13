@@ -1,2 +1,2 @@
 export * from "./ICreateParticipant";
-export * from "./IGetOneParticipant";
+export * from "./IGetParticipant";

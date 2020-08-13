@@ -52,11 +52,7 @@ class MakeAuthentication implements IMakeAuthentication {
   }
 
   async hasMatchThePassword(userPassword: string, password: string) {
-    let hasMatch = await bcrypt.compare(password, userPassword);
-
-    if (!hasMatch) {
-      throw new Error("Email e/ou senha inválidos");
-    }
+    return await bcrypt.compare(password, userPassword);
   }
 
   async generateAcessToken({ id }: IUserPayload) {

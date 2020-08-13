@@ -13,8 +13,8 @@
     - [x] Por participante
     - [x] Por pesquisador
   - [] Validando os dados
-- [] Pegar dados do participante logado
-  - [] Validar acesso a rota
+- [x] Pegar dados do participante logado
+  - [x] Validar acesso a rota
 - [] Pegar todos os participantes para colocar em uma pesquisa
   - [] Validar acesso a rota
   - [] Filtrar os participantes por:

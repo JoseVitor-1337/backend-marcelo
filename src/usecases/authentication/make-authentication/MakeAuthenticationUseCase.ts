@@ -6,9 +6,18 @@ class MakeAuthenticationUseCase {
   async makeAuthentication(email: string, password: string): Promise<string> {
     let user = await this.authentication.findUserTypeByEmail(email);
 
-    this.authentication.hasMatchThePassword(user.password, password);
+    let hasMatch = await this.authentication.hasMatchThePassword(
+      user.password,
+      password
+    );
 
-    return await this.authentication.generateAcessToken(user);
+    if (hasMatch) {
+      throw new Error("Email e/ou senha inválidos");
+    }
+
+    const token = await this.authentication.generateAcessToken(user);
+
+    return token;
   }
 }
 

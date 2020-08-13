@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateParticipant, GetOneParticipant } from "@usecases/participants";
+import { CreateParticipant, GetParticipant } from "@usecases/participants";
 
 class ParticipantController {
   async create(request: Request, response: Response) {
@@ -24,7 +24,7 @@ class ParticipantController {
     const id = String(request.headers.id);
 
     try {
-      const participant = await GetOneParticipant.getOne(id);
+      const participant = await GetParticipant.findOne(id);
 
       return response.json(participant);
     } catch (error) {
