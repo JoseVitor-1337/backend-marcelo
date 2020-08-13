@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import { IMakeAuthentication, IUserPayload } from "@protocols/authentication";
 import Researcher from "@models/Researcher";
 import Participant from "@models/Participant";
+import { API_SECRET } from "src/config/enviroment";
 
 class MakeAuthentication implements IMakeAuthentication {
   private async findParticipantByEmail(email: string) {
@@ -58,13 +59,12 @@ class MakeAuthentication implements IMakeAuthentication {
     }
   }
 
-  async generateAcessToken({ id, type }: IUserPayload) {
+  async generateAcessToken({ id }: IUserPayload) {
     const payload = {
       id,
-      type,
     };
 
-    const token = jwt.sign(payload, "alovoce", {
+    const token = jwt.sign(payload, API_SECRET, {
       expiresIn: 100 * 60,
     });
 

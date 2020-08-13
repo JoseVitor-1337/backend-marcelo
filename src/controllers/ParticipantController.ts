@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateParticipant } from "@usecases/participants";
+import { CreateParticipant, GetOneParticipant } from "@usecases/participants";
 
 class ParticipantController {
   async create(request: Request, response: Response) {
@@ -13,9 +13,23 @@ class ParticipantController {
       return response.json({
         message: `Participant ${fullName} foi cadastrado com sucesso`,
       });
-    } catch (err) {
+    } catch (error) {
       return response.status(400).json({
-        message: err.message,
+        message: error.message,
+      });
+    }
+  }
+
+  async show(request: Request, response: Response) {
+    const id = String(request.headers.id);
+
+    try {
+      const participant = await GetOneParticipant.getOne(id);
+
+      return response.json(participant);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
       });
     }
   }

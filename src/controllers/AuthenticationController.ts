@@ -13,9 +13,9 @@ class ParticipantController {
       let token = await authentication.makeAuthentication(email, password);
 
       return response.json({ token });
-    } catch (err) {
+    } catch (error) {
       return response.status(400).json({
-        message: err.message,
+        message: error.message,
       });
     }
   }

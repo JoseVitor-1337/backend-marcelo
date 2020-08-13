@@ -1,5 +1,5 @@
 import CreateResearcherUseCase from "./CreateResearcherUseCase";
-import { SaveResearcherToDatabase } from "@database/researcher";
+import { SaveResearcherToDatabase } from "@domain/researcher";
 
 const CreateResearcher = new CreateResearcherUseCase(
   new SaveResearcherToDatabase()
