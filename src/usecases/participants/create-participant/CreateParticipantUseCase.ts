@@ -1,3 +1,5 @@
+import bcrypt from "bcryptjs";
+
 import { ICreateParticipant } from "@protocols/participant/ICreateParticipant";
 import { IParticipant } from "@models/Participant";
 
@@ -26,6 +28,8 @@ class CreateParticipantUseCase {
         "Este email já está cadastrado na plataforma por um Pesquisador"
       );
     }
+
+    participant.password = await bcrypt.hash(participant.password, 10);
 
     this.createParticipant.save(participant);
   }

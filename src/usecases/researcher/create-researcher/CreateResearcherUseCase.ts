@@ -1,3 +1,5 @@
+import bcrypt from "bcryptjs";
+
 import { ICreateResearcher } from "@protocols/researcher";
 import { IResearcher } from "@models/Researcher";
 
@@ -26,6 +28,8 @@ class CreateParticipantUseCase {
         "Este email já está cadastrado na plataforma por um Pesquisador"
       );
     }
+
+    researcher.password = await bcrypt.hash(researcher.password, 10);
 
     this.createResearcher.save(researcher);
   }

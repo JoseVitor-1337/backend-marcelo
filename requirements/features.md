@@ -3,13 +3,15 @@
 ## Administrador
 
 - [] Criação da conta do administrador
-  - [] Validando Email
+  - [] Validando email
   - [] Validando os dados
 
 ## Participantes
 
 - [x] Criação da conta do participante
-  - [z] Validando Email
+  - [x] Validando email
+    - [x] Por participante
+    - [x] Por pesquisador
   - [] Validando os dados
 - [] Pegar dados do participante logado
   - [] Validar acesso a rota
@@ -22,9 +24,11 @@
 
 ## Pesquisadores
 
-- [] Criação da conta do pesquisador
+- [x] Criação da conta do pesquisador
   - [] Validando os dados
-  - [] Validando Email
+  - [x] Validando email
+    - [x] Por participante
+    - [x] Por pesquisador
 - [] Pegar dados do pesquisador logado
   - [] Validar acesso a rota
 
