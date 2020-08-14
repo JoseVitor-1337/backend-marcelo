@@ -29,7 +29,7 @@ routes.post("/researcher", ResearcherController.create);
 routes.get("/researcher", validateAcessInRouter, ResearcherController.show);
 
 routes.post("/search", validateAcessInRouter, SearchController.create);
-routes.patch("/search", validateAcessInRouter, SearchController.update);
+routes.patch("/search/:id", validateAcessInRouter, SearchController.update);
 
 routes.post("/auth", AuthenticationController.create);
 

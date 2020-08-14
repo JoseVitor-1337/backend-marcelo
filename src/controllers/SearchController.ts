@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateSearch } from "@usecases/search/create-search";
+import { UpdateSearch } from "@usecases/search/update-search";
 
 class SearchController {
   async create(request: Request, response: Response) {
@@ -18,7 +19,15 @@ class SearchController {
   }
 
   async update(request: Request, response: Response) {
+    const searchId = String(request.params.id);
+    const researcherId = String(request.headers.id);
+
+    request.body.researcher = researcherId;
+
     try {
+      const updatedSearch = await UpdateSearch.update(searchId, request.body);
+
+      return response.json(updatedSearch);
     } catch (err) {
       return response.status(400).json({
         message: err.message,

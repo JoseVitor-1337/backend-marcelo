@@ -1,0 +1,83 @@
+[33mcommit 496904e29436d83ef5cb7a694b7f3a73cef6bde5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Fri Aug 14 17:07:10 2020 -0400
+
+    Create Search router was successfully maded
+
+[33mcommit bf3d90da2769b0dd8e6d16e2dac13deed0537427[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Fri Aug 14 14:17:08 2020 -0400
+
+    make the upload.js turn into typescript
+
+[33mcommit f3cb925cdb025960dfc5afd17eb4b9478187f112[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Thu Aug 13 20:26:23 2020 -0400
+
+    make the upload images work fine
+
+[33mcommit d6c867c6105360e819704329c6de947bad09db15[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Thu Aug 13 19:44:19 2020 -0400
+
+    Get all participants router was successfully made
+
+[33mcommit 549bffb509bc22e9dd4111985f31e810a1fa9325[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Thu Aug 13 19:24:27 2020 -0400
+
+    Make the router Get Researcher functionlity work fine
+
+[33mcommit 8aa2505acf45b5971c0cde36b2da6f9df24e18a6[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Thu Aug 13 19:12:54 2020 -0400
+
+    Create the validatio of all Models in the Database, with Regular expressions and error messages
+
+[33mcommit 13c28ae7cd9a6673e374296ecf3b57ca5ec0de57[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Thu Aug 13 14:43:52 2020 -0400
+
+    fix the GetOneParticipant method to GetParticipant, to reuse in case to see if the user that acess a router is a participant or not
+
+[33mcommit 87eb89ca8d77d7b1408982d00d977c556c73a222[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 21:11:47 2020 -0400
+
+    Make the validation of routers only by token, and the router to get a data from database of participant
+
+[33mcommit d262ee4c6650f517c992510fc091541b03eb9ce0[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 20:08:52 2020 -0400
+
+    the authentication router was successfully made, it is working
+
+[33mcommit c4223f055b304c8162a2f581673da858e04a1c93[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 18:17:01 2020 -0400
+
+    fix the validation of email, must verify both the participant and the researcher
+
+[33mcommit 6e0ac3c1fba554790ebf3014c118685cac6fb427[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 18:02:17 2020 -0400
+
+    fix the exports for the app
+
+[33mcommit 5eea3a970b7f4375157b9db7f0c21f746d331f43[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 17:49:01 2020 -0400
+
+    Create participant router is working successfully, and the type of each field in the models was refactored
+
+[33mcommit 290e06f9cae3d8bd14e80722cc1261b3a92a9057[m
+Author: JoseVitor-1337 <josevitordemelo@yahoo.com>
+Date:   Wed Aug 12 15:02:35 2020 -0400
+
+    Setup was prepared successfully, including typescript, jest (for TDD), enviroment variables and a requirements folder, that contains the application features
+
+[33mcommit d49141b086c411b5d24b19993a939b55ddaf297b[m
+Author: JoseVitor-1337 <59937924+JoseVitor-1337@users.noreply.github.com>
+Date:   Wed Aug 12 14:23:00 2020 -0400
+
+    Initial commit

@@ -6,6 +6,7 @@ class UpdateSearchFromDatabase implements IUpdateSearch {
     const newSearch = await Search.findByIdAndUpdate(searchId, search, {
       new: true,
       lean: true,
+      runValidators: true,
     });
 
     return newSearch;
