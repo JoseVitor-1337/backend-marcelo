@@ -5,20 +5,22 @@ interface IImage {
   alt: string;
 }
 
-export interface IAlternatives {
+interface IAlternatives {
   option: string;
   answer?: string;
   image?: IImage;
   correct: boolean;
 }
 
-interface IQuestionsSchema extends database.Document {
+export interface IQuestion {
   type: string;
   question: string | IImage;
   answer: string | IImage;
   alternatives: IAlternatives[];
   retrues: boolean;
 }
+
+interface IQuestionsSchema extends database.Document, IQuestion {}
 
 const QuestionsSchema = new database.Schema({
   type: {

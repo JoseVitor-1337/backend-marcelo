@@ -8,7 +8,7 @@ export interface IStatus {
   attempts?: number;
 }
 
-interface IResearchSchema extends database.Document {
+export interface ISearch {
   researcher: string;
   title: string;
   type: string;
@@ -24,7 +24,9 @@ interface IResearchSchema extends database.Document {
   status: IStatus[];
 }
 
-const ResearchSchema = new database.Schema({
+interface ISearchSchema extends database.Document, ISearch {}
+
+const SearchSchema = new database.Schema({
   researcher: {
     type: database.Schema.Types.ObjectId,
     required: true,
@@ -91,4 +93,4 @@ const ResearchSchema = new database.Schema({
   ],
 });
 
-export default database.model<IResearchSchema>("Research", ResearchSchema);
+export default database.model<ISearchSchema>("Research", SearchSchema);

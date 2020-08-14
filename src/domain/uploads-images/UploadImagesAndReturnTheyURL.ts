@@ -1,7 +1,7 @@
 import { IUploadImages } from "@protocols/uploads-images";
 import { PORT } from "src/config/enviroment";
 
-class UploadImagesAndSaveURLIntoDatabase implements IUploadImages {
+class UploadImagesAndReturnTheyURL implements IUploadImages {
   async transformFilanemesIntoArray(files: any): Promise<any[]> {
     let filenames = [];
 
@@ -18,4 +18,4 @@ class UploadImagesAndSaveURLIntoDatabase implements IUploadImages {
   }
 }
 
-export { UploadImagesAndSaveURLIntoDatabase };
+export { UploadImagesAndReturnTheyURL };
