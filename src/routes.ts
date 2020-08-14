@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { storage } from "./config/upload";
-import multer from "multer";
+import upload from "@config/upload";
 
 import ParticipantController from "@controllers/ParticipantController";
 import ResearcherController from "@controllers/ResearcherController";
@@ -11,14 +10,10 @@ import UploadsController from "@controllers/UploadsController";
 
 const routes = Router();
 
-const uploadConfig = multer({
-  storage,
-});
-
 routes.post(
   "/uploads",
   validateAcessInRouter,
-  uploadConfig.array("images"),
+  upload.array("images"),
   UploadsController.create
 );
 
