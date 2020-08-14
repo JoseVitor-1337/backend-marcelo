@@ -8,6 +8,7 @@ import validateAcessInRouter from "./middleware/validateAcessInRouter";
 import AdministerController from "@controllers/AdministerController";
 import UploadsController from "@controllers/UploadsController";
 import SearchController from "@controllers/SearchController";
+import QuestionController from "@controllers/QuestionController";
 
 const routes = Router();
 
@@ -30,6 +31,13 @@ routes.get("/researcher", validateAcessInRouter, ResearcherController.show);
 
 routes.post("/search", validateAcessInRouter, SearchController.create);
 routes.patch("/search/:id", validateAcessInRouter, SearchController.update);
+
+routes.post(
+  "/question/:search_id",
+  validateAcessInRouter,
+  QuestionController.create
+);
+routes.patch("/question/:id", validateAcessInRouter, QuestionController.update);
 
 routes.post("/auth", AuthenticationController.create);
 

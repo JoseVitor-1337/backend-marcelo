@@ -5,7 +5,7 @@ import { DB_URL } from "../config/enviroment";
 try {
   mongoose.connect(DB_URL, {
     useCreateIndex: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });
