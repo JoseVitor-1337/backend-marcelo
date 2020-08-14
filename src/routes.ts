@@ -1,11 +1,26 @@
 import { Router } from "express";
+import { storage } from "./config/upload";
+import multer from "multer";
+
 import ParticipantController from "@controllers/ParticipantController";
 import ResearcherController from "@controllers/ResearcherController";
 import AuthenticationController from "@controllers/AuthenticationController";
 import validateAcessInRouter from "./middleware/ValidateAcessInRouter";
 import AdministerController from "@controllers/AdministerController";
+import UploadsController from "@controllers/UploadsController";
 
 const routes = Router();
+
+const uploadConfig = multer({
+  storage,
+});
+
+routes.post(
+  "/uploads",
+  validateAcessInRouter,
+  uploadConfig.array("images"),
+  UploadsController.create
+);
 
 routes.post("/participant", ParticipantController.create);
 routes.get("/participant", validateAcessInRouter, ParticipantController.show);
