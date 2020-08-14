@@ -3,7 +3,7 @@ import { IQuestion } from "@models/Question";
 import { ISearch } from "@models/Search";
 
 export interface ICreateQuestion {
-  findSearchForTheQuestion(searchId: string): Promise<ISearch>;
+  findSearch(searchId: string): Promise<ISearch>;
   save(question: IQuestion): Promise<string>;
   updateSearchToIncresesAQuestion(
     searchId: string,

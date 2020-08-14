@@ -3,7 +3,7 @@ import Question, { IQuestion } from "@models/Question";
 import Search, { ISearch } from "@models/Search";
 
 class SaveQuestionsIntoDatabase implements ICreateQuestion {
-  async findSearchForTheQuestion(searchId: string) {
+  async findSearch(searchId: string) {
     const hasSearch = await Search.findById(searchId).lean();
 
     return hasSearch;

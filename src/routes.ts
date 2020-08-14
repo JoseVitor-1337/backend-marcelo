@@ -9,6 +9,7 @@ import AdministerController from "@controllers/AdministerController";
 import UploadsController from "@controllers/UploadsController";
 import SearchController from "@controllers/SearchController";
 import QuestionController from "@controllers/QuestionController";
+import ParticipantIntoSearchController from "@controllers/ParticipantIntoSearchController";
 
 const routes = Router();
 
@@ -40,5 +41,11 @@ routes.post(
 routes.patch("/question/:id", validateAcessInRouter, QuestionController.update);
 
 routes.post("/auth", AuthenticationController.create);
+
+routes.patch(
+  "/participant/search",
+  validateAcessInRouter,
+  ParticipantIntoSearchController.create
+);
 
 export default routes;
