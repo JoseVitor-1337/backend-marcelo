@@ -13,6 +13,8 @@ export interface IPagination {
 export interface IGetSearchs {
   findSearchByid(searchId: string): Promise<ISearch>;
 
+  findSearchToMakeCSVFile(searchId: string): Promise<ISearch>;
+
   findSearchByParticipantView(
     status: IStatus,
     filters: ISearchFilters,

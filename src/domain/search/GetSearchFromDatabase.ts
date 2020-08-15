@@ -106,6 +106,16 @@ class GetSearchFromDatabase implements IGetSearchs {
 
     return search;
   }
+
+  async findSearchToMakeCSVFile(searchId: string) {
+    const search = await Search.findById(searchId)
+      .lean()
+      .populate("researcher")
+      .populate("questions")
+      .populate("participants");
+
+    return search;
+  }
 }
 
 export { GetSearchFromDatabase };

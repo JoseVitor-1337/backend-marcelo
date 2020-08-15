@@ -14,6 +14,7 @@ import ParticipantAnswerSearchController from "@controllers/ParticipantAnswerSea
 import SearchsForAdminsiterController from "@controllers/SearchsForAdminsiterController";
 import SearchsForParticipantController from "@controllers/SearchsForParticipantController";
 import ChangeSearchSessionController from "@controllers/ChangeSearchSessionController";
+import GenerateCSVController from "@controllers/GenerateCSVController";
 
 const routes = Router();
 
@@ -75,6 +76,12 @@ routes.get(
   "/searchs/administer",
   validateAcessInRouter,
   SearchsForAdminsiterController.index
+);
+
+routes.post(
+  "/download/csv/:search_id",
+  validateAcessInRouter,
+  GenerateCSVController.create
 );
 
 export default routes;
