@@ -2,9 +2,9 @@
 
 ## Administrador
 
-- [] Criação da conta do administrador
-  - [] Validando email
-  - [] Validando os dados
+- [x] Criação da conta do administrador
+  - [x] Validando email
+  - [x] Validando os dados
 
 ## Participantes
 
@@ -12,12 +12,12 @@
   - [x] Validando email
     - [x] Por participante
     - [x] Por pesquisador
-  - [] Validando os dados
+  - [x] Validando os dados
 - [x] Pegar dados do participante logado
   - [x] Validar acesso a rota
-- [] Pegar todos os participantes para colocar em uma pesquisa
-  - [] Validar acesso a rota
-  - [] Filtrar os participantes por:
+- [x] Pegar todos os participantes para colocar em uma pesquisa
+  - [x] Validar acesso a rota
+  - [x] Filtrar os participantes por:
     1. Nome
     2. Escola ou universidade
     3. Escolaridade
@@ -25,22 +25,21 @@
 ## Pesquisadores
 
 - [x] Criação da conta do pesquisador
-  - [] Validando os dados
+  - [x] Validando os dados
   - [x] Validando email
     - [x] Por participante
     - [x] Por pesquisador
-- [] Pegar dados do pesquisador logado
-  - [] Validar acesso a rota
+- [x] Pegar dados do pesquisador logado
+  - [x] Validar acesso a rota
 
 ## Perguntas
 
-- [] Criar uma rota para uploads de imagens para as perguntas também poderem usar imagens
-- [] Criação de uma pergunta
-  - [] Os dados da pergunta podem ser imagens ou strings, permitir flexibilidade.
-  - [] Validando os dados
-  - [] Acesso apenas ao pesquisador
-  - [] Deve está atrelado a uma pesquisa
-  - [] A tipologia de pergunta deve ser de acordo com a resposta
+- [x] Criar uma rota para uploads de imagens para as perguntas também poderem usar imagens
+- [x] Criação de uma pergunta
+  - [x] Os dados da pergunta podem ser imagens ou strings, permitir flexibilidade.
+  - [x] Validando os dados
+  - [x] Acesso apenas ao pesquisador
+  - [x] Deve está atrelado a uma pesquisa
   - [] Pergunta deve ter uma resposta certa
 - [] Editar uma pergunta
   - [] Validando os dados

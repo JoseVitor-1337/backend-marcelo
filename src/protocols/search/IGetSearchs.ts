@@ -11,7 +11,7 @@ export interface IPagination {
 }
 
 export interface IGetSearchs {
-  findSearch(searchId: string): Promise<ISearch>;
+  findSearchByid(searchId: string): Promise<ISearch>;
 
   findSearchByParticipantView(
     status: IStatus,

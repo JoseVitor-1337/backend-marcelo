@@ -74,8 +74,8 @@ const SearchSchema = new database.Schema({
   },
   session: {
     type: String,
-    default: "Aberto",
-    match: [/^Aberto$|^Fechado$/, "{VALUE} deve ser 'Aberto' ou 'Fechado'"],
+    default: "Aberta",
+    match: [/^Aberta$|^Fechada$/, "{VALUE} deve ser 'Aberta' ou 'Fechada'"],
   },
   participants: [
     {

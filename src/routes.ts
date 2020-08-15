@@ -13,6 +13,7 @@ import ParticipantIntoSearchController from "@controllers/ParticipantIntoSearchC
 import ParticipantAnswerSearchController from "@controllers/ParticipantAnswerSearchController";
 import SearchsForAdminsiterController from "@controllers/SearchsForAdminsiterController";
 import SearchsForParticipantController from "@controllers/SearchsForParticipantController";
+import ChangeSearchSessionController from "@controllers/ChangeSearchSessionController";
 
 const routes = Router();
 
@@ -51,10 +52,17 @@ routes.patch(
   validateAcessInRouter,
   ParticipantIntoSearchController.create
 );
+
 routes.patch(
   "/participant/answer/search/:search_id",
   validateAcessInRouter,
   ParticipantAnswerSearchController.update
+);
+
+routes.patch(
+  "/search/session/:search_id",
+  validateAcessInRouter,
+  ChangeSearchSessionController.update
 );
 
 routes.get(

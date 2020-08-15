@@ -1,5 +1,5 @@
 import CreateSearchUseCase from "./CreateSearchUseCase";
-import { SaveSearchintoDatabase } from "@domain/search/SaveSearchintoDatabase";
+import { SaveSearchintoDatabase } from "@domain/search";
 import { GetResearcherFromDatabase } from "@domain/researcher";
 
 const CreateSearch = new CreateSearchUseCase(

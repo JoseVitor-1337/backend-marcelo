@@ -1,5 +1,5 @@
 import GetSearchsUseCase from "./GetSearchsUseCase";
-import { GetSearchFromDatabase } from "@domain/search/GetSearchFromDatabase";
+import { GetSearchFromDatabase } from "@domain/search";
 
 const GetSearchs = new GetSearchsUseCase(new GetSearchFromDatabase());
 

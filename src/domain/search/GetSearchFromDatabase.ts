@@ -14,7 +14,7 @@ class GetSearchFromDatabase implements IGetSearchs {
       participants: {
         $in: [participantStatus.participantId],
       },
-
+      session: "Aberta",
       $and: [
         {
           type: {
@@ -101,7 +101,7 @@ class GetSearchFromDatabase implements IGetSearchs {
 
     return searchs;
   }
-  async findSearch(searchId: string): Promise<ISearch> {
+  async findSearchByid(searchId: string): Promise<ISearch> {
     const search = await Search.findById(searchId).lean();
 
     return search;

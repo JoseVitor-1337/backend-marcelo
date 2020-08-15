@@ -1,5 +1,5 @@
 import { IGetParticipant } from "@protocols/participant";
-import { IAddParticipantIntoSearch } from "@protocols/search/IAddParticipantIntoSearch";
+import { IAddParticipantIntoSearch } from "@protocols/search";
 
 class AddParticipantIntoSearchUseCase {
   constructor(

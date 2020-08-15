@@ -1,8 +1,8 @@
-import { ICreateSearch, ISearchFilters } from "@protocols/search/ICreateSearch";
+import { ICreateSearch, IFindSearch } from "@protocols/search";
 import Search, { ISearch } from "@models/Search";
 
 class SaveSearchintoDatabase implements ICreateSearch {
-  async findSearch(searchFilters: ISearchFilters) {
+  async findSearchByFilters(searchFilters: IFindSearch) {
     const { title, researcher, content } = searchFilters;
 
     const hasSearch = await Search.findOne({

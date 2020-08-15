@@ -1,5 +1,5 @@
 import { IStatus } from "@models/Search";
-import { IParticipantAnswerSearch } from "@protocols/search/IParticipantAnswerSearch";
+import { IParticipantAnswerSearch } from "@protocols/search";
 import { IGetSearchs } from "@protocols/search/IGetSearchs";
 
 class ParticipantAnswerSearchUseCase {
@@ -9,7 +9,7 @@ class ParticipantAnswerSearchUseCase {
   ) {}
 
   async update(searchId: string, status: IStatus) {
-    const search = await this.getSearch.findSearch(searchId);
+    const search = await this.getSearch.findSearchByid(searchId);
 
     if (!searchId) {
       throw new Error("Pesquisa não encontrada");

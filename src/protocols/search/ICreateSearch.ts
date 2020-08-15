@@ -1,7 +1,12 @@
 import { ISearch } from "@models/Search";
-import { ISearchFilters } from "./IGetSearchs";
+
+export interface IFindSearch {
+  researcher: string;
+  title: string;
+  content: string;
+}
 
 export interface ICreateSearch {
-  findSearch(searchFilters: ISearchFilters): Promise<boolean>;
+  findSearchByFilters(searchFilters: IFindSearch): Promise<boolean>;
   save(search: ISearch): Promise<ISearch>;
 }

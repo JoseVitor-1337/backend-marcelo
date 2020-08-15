@@ -1,5 +1,5 @@
 import AddParticipantIntoSearchUseCase from "./AddParticipantIntoSearchUseCase";
-import { SaveUserInSearchIntoDatabase } from "@domain/search/SaveUserInSearchIntoDatabase";
+import { SaveUserInSearchIntoDatabase } from "@domain/search";
 import { GetParticipantFromDatabase } from "@domain/participants";
 
 const AddParticipantIntoSearch = new AddParticipantIntoSearchUseCase(

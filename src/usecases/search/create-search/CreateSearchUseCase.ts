@@ -1,6 +1,6 @@
-import { ICreateSearch } from "@protocols/search/ICreateSearch";
 import { ISearch } from "@models/Search";
 import { IGetResearcher } from "@protocols/researcher";
+import { ICreateSearch } from "@protocols/search";
 
 class CreateSearchUseCase {
   constructor(
@@ -17,9 +17,9 @@ class CreateSearchUseCase {
       throw new Error("Apenas um Pesquisador pode criar uma pesquisa");
     }
 
-    const searchAlreadyExist = await this.createSearch.findSearch({
-      title,
+    const searchAlreadyExist = await this.createSearch.findSearchByFilters({
       researcher,
+      title,
       content,
     });
 
