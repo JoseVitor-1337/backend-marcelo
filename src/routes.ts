@@ -10,6 +10,7 @@ import UploadsController from "@controllers/UploadsController";
 import SearchController from "@controllers/SearchController";
 import QuestionController from "@controllers/QuestionController";
 import ParticipantIntoSearchController from "@controllers/ParticipantIntoSearchController";
+import ParticipantAnswerSearchController from "@controllers/ParticipantAnswerSearchController";
 
 const routes = Router();
 
@@ -46,6 +47,12 @@ routes.patch(
   "/participant/search",
   validateAcessInRouter,
   ParticipantIntoSearchController.create
+);
+
+routes.patch(
+  "/participant/answer/search/:search_id",
+  validateAcessInRouter,
+  ParticipantAnswerSearchController.update
 );
 
 export default routes;

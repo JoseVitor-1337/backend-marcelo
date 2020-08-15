@@ -12,7 +12,7 @@ class ParticipantController {
       await createParticipant.create(request.body);
 
       return response.json({
-        message: `Participant ${fullName} foi cadastrado com sucesso`,
+        message: `Participantes ${fullName} foi cadastrado com sucesso`,
       });
     } catch (error) {
       return response.status(400).json({

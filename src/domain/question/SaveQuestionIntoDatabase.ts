@@ -3,12 +3,6 @@ import Question, { IQuestion } from "@models/Question";
 import Search, { ISearch } from "@models/Search";
 
 class SaveQuestionsIntoDatabase implements ICreateQuestion {
-  async findSearch(searchId: string) {
-    const hasSearch = await Search.findById(searchId).lean();
-
-    return hasSearch;
-  }
-
   async save(question: IQuestion) {
     const newQuestion = await Question.create(question);
 
@@ -20,9 +14,7 @@ class SaveQuestionsIntoDatabase implements ICreateQuestion {
     search: ISearch,
     questionId: string
   ) {
-    console.log(search, questionId);
-
-    const newSearch = await Search.findByIdAndUpdate(
+    await Search.findByIdAndUpdate(
       searchId,
       {
         questions: [...search.questions, questionId],
@@ -33,8 +25,6 @@ class SaveQuestionsIntoDatabase implements ICreateQuestion {
         runValidators: true,
       }
     );
-
-    console.log(newSearch);
   }
 }
 

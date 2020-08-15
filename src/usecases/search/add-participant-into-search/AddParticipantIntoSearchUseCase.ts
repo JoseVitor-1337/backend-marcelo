@@ -10,8 +10,6 @@ class AddParticipantIntoSearchUseCase {
   async update(searchId: string, participantId: string) {
     const participantExist = await this.getParticipant.find(participantId);
 
-    console.log(participantExist);
-
     if (!participantExist) {
       throw new Error("Participante não encontrado");
     }

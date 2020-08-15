@@ -3,7 +3,7 @@ import database from "../config/database";
 export interface IStatus {
   participantId?: string;
   answeredQuestions?: number;
-  correctQuestions?: number[];
+  correctQuestions?: string[];
   status?: string;
   attempts?: number;
 }
@@ -54,7 +54,7 @@ const SearchSchema = new database.Schema({
   },
   retries: {
     type: Number,
-    min: [0, "{VALUE} deve ser um número inteiro maior ou igual a 0"],
+    min: [1, "{VALUE} deve ser um número inteiro maior ou igual a 0"],
   },
   MTS: {
     type: String,
@@ -93,4 +93,4 @@ const SearchSchema = new database.Schema({
   ],
 });
 
-export default database.model<ISearchSchema>("Research", SearchSchema);
+export default database.model<ISearchSchema>("Search", SearchSchema);
