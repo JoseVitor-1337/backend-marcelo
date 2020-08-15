@@ -11,6 +11,8 @@ import SearchController from "@controllers/SearchController";
 import QuestionController from "@controllers/QuestionController";
 import ParticipantIntoSearchController from "@controllers/ParticipantIntoSearchController";
 import ParticipantAnswerSearchController from "@controllers/ParticipantAnswerSearchController";
+import SearchsForAdminsiterController from "@controllers/SearchsForAdminsiterController";
+import SearchsForParticipantController from "@controllers/SearchsForParticipantController";
 
 const routes = Router();
 
@@ -33,13 +35,14 @@ routes.get("/researcher", validateAcessInRouter, ResearcherController.show);
 
 routes.post("/search", validateAcessInRouter, SearchController.create);
 routes.patch("/search/:id", validateAcessInRouter, SearchController.update);
+routes.get("/search", validateAcessInRouter, SearchController.index);
 
+routes.patch("/question/:id", validateAcessInRouter, QuestionController.update);
 routes.post(
   "/question/:search_id",
   validateAcessInRouter,
   QuestionController.create
 );
-routes.patch("/question/:id", validateAcessInRouter, QuestionController.update);
 
 routes.post("/auth", AuthenticationController.create);
 
@@ -48,11 +51,22 @@ routes.patch(
   validateAcessInRouter,
   ParticipantIntoSearchController.create
 );
-
 routes.patch(
   "/participant/answer/search/:search_id",
   validateAcessInRouter,
   ParticipantAnswerSearchController.update
+);
+
+routes.get(
+  "/searchs/participant",
+  validateAcessInRouter,
+  SearchsForParticipantController.index
+);
+
+routes.get(
+  "/searchs/administer",
+  validateAcessInRouter,
+  SearchsForAdminsiterController.index
 );
 
 export default routes;

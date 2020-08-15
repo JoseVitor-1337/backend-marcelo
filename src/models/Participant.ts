@@ -21,6 +21,7 @@ const ParticipantSchema = new database.Schema({
   fullName: {
     type: String,
     required: true,
+    set: (fullName: string) => fullName.toLowerCase(),
     match: [/^[a-zA-Z]{2,}$/, "{VALUE} nãe é um nome válido"],
   },
   schooling: {
@@ -49,6 +50,8 @@ const ParticipantSchema = new database.Schema({
   univercityOrSchoolName: {
     type: String,
     required: true,
+    set: (univercityOrSchoolName: string) =>
+      univercityOrSchoolName.toLowerCase(),
     match: [
       /^[a-zA-Z][^0-9]{4,}$/,
       "{VALUE} nãoe é uma nome de escola/univercidade inválido",

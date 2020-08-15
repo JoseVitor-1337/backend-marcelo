@@ -1,7 +1,106 @@
-import { IGetSearch } from "@protocols/search/IGetSearch";
-import Search, { ISearch } from "@models/Search";
+import { IGetSearchs, ISearchFilters, IPagination } from "@protocols/search";
+import Search, { ISearch, IStatus } from "@models/Search";
 
-class GetSearchFromDatabase implements IGetSearch {
+class GetSearchFromDatabase implements IGetSearchs {
+  async findSearchByParticipantView(
+    participantStatus: IStatus,
+    filters: ISearchFilters,
+    pagination: IPagination
+  ) {
+    const { type, title } = filters;
+    const { page, itemPerPage } = pagination;
+
+    const searchs = await Search.find({
+      participants: {
+        $in: [participantStatus.participantId],
+      },
+
+      $and: [
+        {
+          type: {
+            $regex: type ? type : "",
+          },
+        },
+        {
+          title: {
+            $regex: title ? title : "",
+          },
+        },
+      ],
+    })
+      .skip((page - 1) * itemPerPage)
+      .limit(itemPerPage)
+      .select("-participants")
+      .populate("questions");
+
+    const sequelizedSearchs = searchs.filter((search) => {
+      return search.status.some((statu) => {
+        return statu.status === participantStatus.status;
+      });
+    });
+
+    return sequelizedSearchs;
+  }
+
+  async findAllSearchsForAdminister(
+    filters: ISearchFilters,
+    pagination: IPagination
+  ) {
+    const { type, title } = filters;
+    const { page, itemPerPage } = pagination;
+
+    const searchs = await Search.find({
+      $and: [
+        {
+          type: {
+            $regex: type ? type : "",
+          },
+        },
+        {
+          title: {
+            $regex: title ? title : "",
+          },
+        },
+      ],
+    })
+      .skip((page - 1) * itemPerPage)
+      .limit(itemPerPage)
+      .populate("participants")
+      .populate("questions");
+
+    return searchs;
+  }
+
+  async findSearchsOfResearcher(
+    researchId: string,
+    filters: ISearchFilters,
+    pagination: IPagination
+  ) {
+    const { type, title } = filters;
+    const { page, itemPerPage } = pagination;
+
+    const searchs = await Search.find({
+      researcher: researchId,
+      $and: [
+        {
+          type: {
+            $regex: type ? type : "",
+          },
+        },
+        {
+          title: {
+            $regex: title ? title : "",
+          },
+        },
+      ],
+    })
+      .skip((page - 1) * itemPerPage)
+      .limit(itemPerPage)
+      .populate("participants")
+      .populate("questions");
+
+    return searchs;
+  }
   async findSearch(searchId: string): Promise<ISearch> {
     const search = await Search.findById(searchId).lean();
 

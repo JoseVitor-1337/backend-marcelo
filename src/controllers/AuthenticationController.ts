@@ -8,8 +8,6 @@ class ParticipantController {
     try {
       const authentication = Authentication;
 
-      console.log(request.body);
-
       let token = await authentication.makeAuthentication(email, password);
 
       return response.json({ token });

@@ -5,6 +5,7 @@ import { IMakeAuthentication, IUserPayload } from "@protocols/authentication";
 import Researcher from "@models/Researcher";
 import Participant from "@models/Participant";
 import { API_SECRET } from "src/config/enviroment";
+import Administer from "@models/Administer";
 
 class MakeAuthentication implements IMakeAuthentication {
   private async findParticipantByEmail(email: string) {
@@ -16,7 +17,6 @@ class MakeAuthentication implements IMakeAuthentication {
       return {
         id: participant._id,
         password: participant.password,
-        type: "participant",
       };
     }
   }
@@ -30,7 +30,19 @@ class MakeAuthentication implements IMakeAuthentication {
       return {
         id: researcher._id,
         password: researcher.password,
-        type: "researcher",
+      };
+    }
+  }
+
+  private async findAdministerByEmail(email: string) {
+    let administer = await Administer.findOne({ email })
+      .select("password")
+      .lean();
+
+    if (administer) {
+      return {
+        id: administer._id,
+        password: administer.password,
       };
     }
   }
@@ -46,6 +58,12 @@ class MakeAuthentication implements IMakeAuthentication {
 
     if (researcher) {
       return researcher;
+    }
+
+    let administer = await this.findAdministerByEmail(email);
+
+    if (administer) {
+      return administer;
     } else {
       throw new Error("Email e/ou senha inválidos.");
     }

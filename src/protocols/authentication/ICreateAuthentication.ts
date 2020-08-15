@@ -1,7 +1,6 @@
 export interface IUserPayload {
   id: string;
   password: string;
-  type: string;
 }
 
 export interface IMakeAuthentication {

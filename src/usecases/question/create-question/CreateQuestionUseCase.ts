@@ -1,11 +1,11 @@
 import { ICreateQuestion } from "@protocols/question/ICreateQuestion";
 import { IQuestion } from "@models/Question";
-import { IGetSearch } from "@protocols/search/IGetSearch";
+import { IGetSearchs } from "@protocols/search/IGetSearchs";
 
 class CreateQuestionUseCase {
   constructor(
     private createQuestion: ICreateQuestion,
-    private getSearch: IGetSearch
+    private getSearch: IGetSearchs
   ) {}
 
   async create(searchId: string, question: IQuestion) {

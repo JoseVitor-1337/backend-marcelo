@@ -1,4 +1,4 @@
-import { IAddParticipantIntoSearch } from "@protocols/search/IAddParticipantIntoSearch";
+import { IAddParticipantIntoSearch } from "@protocols/search";
 import Search from "@models/Search";
 
 class SaveUserInSearchIntoDatabase implements IAddParticipantIntoSearch {

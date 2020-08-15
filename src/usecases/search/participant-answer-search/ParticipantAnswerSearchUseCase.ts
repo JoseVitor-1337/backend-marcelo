@@ -1,11 +1,11 @@
 import { IStatus } from "@models/Search";
 import { IParticipantAnswerSearch } from "@protocols/search/IParticipantAnswerSearch";
-import { IGetSearch } from "@protocols/search/IGetSearch";
+import { IGetSearchs } from "@protocols/search/IGetSearchs";
 
 class ParticipantAnswerSearchUseCase {
   constructor(
     private addParticipantResponses: IParticipantAnswerSearch,
-    private getSearch: IGetSearch
+    private getSearch: IGetSearchs
   ) {}
 
   async update(searchId: string, status: IStatus) {

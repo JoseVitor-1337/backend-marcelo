@@ -13,12 +13,14 @@ class GetAllParticipantsFromDatabase implements IGetAllParticipants {
       $and: [
         {
           fullName: {
-            $regex: name ? name : "",
+            $regex: name ? name.toLowerCase() : "",
           },
         },
         {
           univercityOrSchoolName: {
-            $regex: univercityOrSchoolName ? univercityOrSchoolName : "",
+            $regex: univercityOrSchoolName
+              ? univercityOrSchoolName.toLowerCase()
+              : "",
           },
         },
         {

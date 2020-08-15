@@ -1,5 +1,5 @@
 import Search, { IStatus, ISearch } from "@models/Search";
-import { IParticipantAnswerSearch } from "@protocols/search/IParticipantAnswerSearch";
+import { IParticipantAnswerSearch } from "@protocols/search";
 
 class SaveParticipantResponsesIntoDatabase implements IParticipantAnswerSearch {
   async verifyStatusOfParticipant(search: ISearch, status: IStatus) {
