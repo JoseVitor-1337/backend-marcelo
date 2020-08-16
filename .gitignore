@@ -1,5 +1,6 @@
-node_modules
-requirements
+/node_modules/
+/requirements/
 .env
+/
 yarn.lock
 package-lock.json

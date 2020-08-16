@@ -1,8 +1,6 @@
 import { Router } from "express";
 import upload from "@config/upload";
 
-import validateAcessInRouter from "@middleware/validateAcessInRouter";
-
 import ParticipantController from "@controllers/ParticipantController";
 import ResearcherController from "@controllers/ResearcherController";
 import AuthenticationController from "@controllers/AuthenticationController";
