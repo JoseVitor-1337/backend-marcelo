@@ -6,11 +6,11 @@ import { IStatus } from "@models/Search";
 class GenerateCSVFromSearchInfo implements IUploadCSV {
   async generateTheCSV(payload: any) {
     writeToPath(
-      path.resolve(__dirname, "..", "..", "..", "uploads", "csv", `file.csv`),
+      path.resolve(__dirname, "..", "..", "..", "uploads", `file.csv`),
       payload
     );
 
-    const pathToCSVFile = "../../../uploads/csv/file.csv";
+    const pathToCSVFile = "../../../uploads/file.csv";
 
     return pathToCSVFile;
   }

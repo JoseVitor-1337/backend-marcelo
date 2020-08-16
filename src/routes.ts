@@ -1,7 +1,7 @@
 import { Router } from "express";
 import upload from "@config/upload";
 
-import validateAcessInRouter from "@middleware/validateAcessInRouter";
+import validateAcessInRoutes from "@middleware/validateAcessInRoutes";
 
 import ParticipantController from "@controllers/ParticipantController";
 import ResearcherController from "@controllers/ResearcherController";
@@ -21,29 +21,29 @@ const routes = Router();
 
 routes.post(
   "/uploads",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   upload.array("images"),
   UploadsController.create
 );
 
 routes.post("/participant", ParticipantController.create);
-routes.get("/participant", validateAcessInRouter, ParticipantController.show);
-routes.get("/participants", validateAcessInRouter, ParticipantController.index);
+routes.get("/participant", validateAcessInRoutes, ParticipantController.show);
+routes.get("/participants", validateAcessInRoutes, ParticipantController.index);
 
 routes.post("/administer", AdministerController.create);
-routes.get("/administer", validateAcessInRouter, AdministerController.show);
+routes.get("/administer", validateAcessInRoutes, AdministerController.show);
 
 routes.post("/researcher", ResearcherController.create);
-routes.get("/researcher", validateAcessInRouter, ResearcherController.show);
+routes.get("/researcher", validateAcessInRoutes, ResearcherController.show);
 
-routes.post("/search", validateAcessInRouter, SearchController.create);
-routes.patch("/search/:id", validateAcessInRouter, SearchController.update);
-routes.get("/search", validateAcessInRouter, SearchController.index);
+routes.post("/search", validateAcessInRoutes, SearchController.create);
+routes.patch("/search/:id", validateAcessInRoutes, SearchController.update);
+routes.get("/search", validateAcessInRoutes, SearchController.index);
 
-routes.patch("/question/:id", validateAcessInRouter, QuestionController.update);
+routes.patch("/question/:id", validateAcessInRoutes, QuestionController.update);
 routes.post(
   "/question/:search_id",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   QuestionController.create
 );
 
@@ -51,37 +51,37 @@ routes.post("/auth", AuthenticationController.create);
 
 routes.patch(
   "/participant/search",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   ParticipantIntoSearchController.create
 );
 
 routes.patch(
   "/participant/answer/search/:search_id",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   ParticipantAnswerSearchController.update
 );
 
 routes.patch(
   "/search/session/:search_id",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   ChangeSearchSessionController.update
 );
 
 routes.get(
   "/searchs/participant",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   SearchsForParticipantController.index
 );
 
 routes.get(
   "/searchs/administer",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   SearchsForAdminsiterController.index
 );
 
 routes.post(
   "/download/csv/:search_id",
-  validateAcessInRouter,
+  validateAcessInRoutes,
   GenerateCSVController.create
 );
 

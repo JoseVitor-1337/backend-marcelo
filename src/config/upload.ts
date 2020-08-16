@@ -2,7 +2,7 @@ import multer from "multer";
 import path from "path";
 
 const storage = multer.diskStorage({
-  destination: path.resolve(__dirname, "..", "..", "uploads", "images"),
+  destination: path.resolve(__dirname, "..", "..", "uploads"),
   filename: function (request, file: Express.Multer.File, callback) {
     console.log(request.body.id);
 
