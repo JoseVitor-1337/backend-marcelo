@@ -1,6 +1,5 @@
 node_modules
 requirements
-build
 .env
 yarn.lock
 package-lock.json
