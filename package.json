@@ -1,12 +1,12 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
+  "name": "backend-marcelo",
+  "version": "12.14.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc",
-    "prod": "node ./build/src/server.js",
+    "start": "node ./build/src/server.js",
     "test": "jest --no-cache --watchAll"
   },
   "keywords": [],
