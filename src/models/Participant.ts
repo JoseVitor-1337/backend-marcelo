@@ -27,7 +27,7 @@ const ParticipantSchema = new database.Schema({
   schooling: {
     type: String,
     required: true,
-    match: [/^Educacao|^Ensino/, "{VALUE} está inválido"],
+    match: [/^Educação|^Ensino/, "{VALUE} está inválido"],
   },
   age: {
     type: Number,
@@ -45,7 +45,7 @@ const ParticipantSchema = new database.Schema({
   economicClassification: {
     type: String,
     required: true,
-    enum: ["Classe baixa", "Classe media", "Classe alta"],
+    enum: ["Classe baixa", "Classe média", "Classe alta"],
   },
   univercityOrSchoolName: {
     type: String,
@@ -67,7 +67,7 @@ const ParticipantSchema = new database.Schema({
     type: String,
     required: true,
     match: [/^M$|^F$/, "{VALUE} deve ser ou 'Masculino' ou 'Feminino'"],
-    enum: ["M", "F"],
+    enum: ["Masculino", "Feminino"],
   },
   state: {
     type: String,

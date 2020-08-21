@@ -69,7 +69,7 @@ const ResearcherSchema = new database.Schema({
     type: String,
     required: true,
     match: [
-      /^[\D\d]{2,}[@][a-z]{2,}[.][a-z]{2,}/,
+      /^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$/,
       "{VALUE} não é um email válido",
     ],
     unique: true,
