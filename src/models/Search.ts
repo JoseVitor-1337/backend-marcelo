@@ -1,9 +1,14 @@
 import database from "../config/database";
 
+export interface ICorrectQuestions {
+  correct: string;
+  answer: string;
+}
+
 export interface IStatus {
   participantId?: string;
   answeredQuestions?: number;
-  correctQuestions?: string[];
+  correctQuestions?: ICorrectQuestions[];
   status?: string;
   attempts?: number;
 }
@@ -68,7 +73,7 @@ const SearchSchema = new database.Schema({
     type: Number,
     min: [1, "{VALUE} deve ser um número inteiro maior ou igual a 1"],
   },
-  status: {
+  participantStatus: {
     type: [Object],
     default: [],
   },
