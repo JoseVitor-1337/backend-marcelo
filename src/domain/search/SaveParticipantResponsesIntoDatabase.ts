@@ -11,18 +11,11 @@ class SaveParticipantResponsesIntoDatabase implements IParticipantAnswerSearch {
       status.attempts++;
     }
 
-    if (search.questions.length < status.answeredQuestions) {
+    if (search.questions.length < status.answeredQuestions.length) {
       throw new Error(
         `${status.answeredQuestions} não é um número válido para perguntas respondidas`
       );
     }
-
-    if (search.questions.length < status.correctQuestions.length) {
-      throw new Error(
-        `${status.correctQuestions.length} não é um número válido para as respostas de suas perguntas`
-      );
-    }
-
     search.status = search.status.map((searchStatu) => {
       if (searchStatu.participantId === status.participantId) {
         return status;

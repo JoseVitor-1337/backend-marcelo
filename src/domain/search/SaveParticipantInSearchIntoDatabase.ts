@@ -1,7 +1,7 @@
 import { IAddParticipantIntoSearch } from "@protocols/search";
 import Search from "@models/Search";
 
-class SaveUserInSearchIntoDatabase implements IAddParticipantIntoSearch {
+class SaveParticipantInSearchIntoDatabase implements IAddParticipantIntoSearch {
   async updateSearchToAddParticipant(
     searchId: string,
 
@@ -13,7 +13,7 @@ class SaveUserInSearchIntoDatabase implements IAddParticipantIntoSearch {
         $push: {
           status: {
             participantId: participantId,
-            answeredQuestions: 0,
+            answeredQuestions: [],
             correctQuestions: [],
             status: "Pendente",
             attempts: 0,
@@ -31,4 +31,4 @@ class SaveUserInSearchIntoDatabase implements IAddParticipantIntoSearch {
   }
 }
 
-export { SaveUserInSearchIntoDatabase };
+export { SaveParticipantInSearchIntoDatabase };

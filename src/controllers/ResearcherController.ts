@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateResearcher } from "@usecases/researcher";
-import { GetResearcher } from "@usecases/researcher/get-researcher";
+import { GetResearcher } from "@usecases/researcher";
 
 class ResearcherController {
   async create(request: Request, response: Response) {

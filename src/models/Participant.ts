@@ -29,10 +29,13 @@ const ParticipantSchema = new database.Schema({
     required: true,
     match: [/^Educação|^Ensino/, "{VALUE} está inválido"],
   },
-  age: {
+  dateOfBirth: {
     type: Number,
-    required: [true, `A idade é um campo obrigatório`],
-    match: [/^[0-9]{1,2}$/, "Por favor, coloque uma idade coerente"],
+    required: [true, `A data de nascimento é um campo obrigatório`],
+    match: [
+      /^[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/,
+      "Por favor, coloque uma data coerente",
+    ],
   },
   ethnicClassification: {
     type: String,

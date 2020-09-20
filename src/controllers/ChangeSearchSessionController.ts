@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ChangeSearchSession } from "@usecases/search/change-search-session";
+import { ChangeSearchSession } from "@usecases/search";
 
 class ChangeSearchSessionController {
   async update(request: Request, response: Response) {

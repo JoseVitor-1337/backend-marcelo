@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-import { CreateSearch } from "@usecases/search/create-search";
-import { UpdateSearch } from "@usecases/search/update-search";
-import { GetSearchs } from "@usecases/search/get-searchs";
+import { CreateSearch, UpdateSearch, GetSearchs } from "@usecases/search";
 
 class SearchController {
   async create(request: Request, response: Response) {

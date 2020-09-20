@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetSearchs } from "@usecases/search/get-searchs";
+import { GetSearchs } from "@usecases/search";
 
 class SearchsForParticipantController {
   async index(request: Request, response: Response) {

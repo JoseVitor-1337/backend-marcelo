@@ -1,14 +1,14 @@
 import database from "../config/database";
 
-export interface ICorrectQuestions {
+export interface IQuestionInfo {
+  numberOfQuestion: number;
   correct: string;
   answer: string;
 }
 
 export interface IStatus {
   participantId?: string;
-  answeredQuestions?: number;
-  correctQuestions?: ICorrectQuestions[];
+  answeredQuestions?: IQuestionInfo[];
   status?: string;
   attempts?: number;
 }

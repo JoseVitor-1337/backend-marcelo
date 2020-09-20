@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateParticipant, GetParticipant } from "@usecases/participants";
-import { GetAllParticipants } from "@usecases/participants/get-all-participants";
+import { GetAllParticipants } from "@usecases/participants";
 
 class ParticipantController {
   async create(request: Request, response: Response) {

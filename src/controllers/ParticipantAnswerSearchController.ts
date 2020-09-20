@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ParticipantAnswerSearch } from "@usecases/search/participant-answer-search";
+import { ParticipantAnswerSearch } from "@usecases/search";
 
 class ParticipantAnswerSearchController {
   async update(request: Request, response: Response) {

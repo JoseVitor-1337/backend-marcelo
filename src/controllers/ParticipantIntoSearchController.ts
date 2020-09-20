@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AddParticipantIntoSearch } from "@usecases/search/add-participant-into-search";
+import { AddParticipantIntoSearch } from "@usecases/search";
 
 class ParticipantController {
   async create(request: Request, response: Response) {
